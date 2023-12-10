@@ -11,6 +11,9 @@ let puntajeJ = document.getElementById('puntajeJ')
 let puntajeP = document.getElementById('puntajeP')
 
 function historial(){
+    if(victorias.length > 5){
+        victorias.shift()
+    }
     localStorage.setItem('victorias',JSON.stringify(victorias))
     localStorage.setItem('puntaje',puntaje)
     localStorage.setItem('puntajePC',puntajePC)
@@ -109,8 +112,8 @@ function borrarHistorial(){
     pc.src = `https://icones.pro/wp-content/uploads/2021/04/icone-cercle-gris.png`
     puntaje = 0
     puntajePC = 0
-    puntajeJ.textContent = 'Tú'
-    puntajeP.textContent = 'PC'
+    puntajeJ.textContent = 'Tú = 0'
+    puntajeP.textContent = 'PC = 0'
     localStorage.setItem('puntaje','0')
     localStorage.setItem('puntajePC','0')
 }
